@@ -6,7 +6,14 @@
 
 <ul>
     @foreach($todos as $todo)
-        <li>{{$todo->id}} - {{$todo->name}}</li>
+        <li>
+            {{$todo->id}} - {{$todo->name}}
+            <form action="{{route('todo.delete', $todo->id)}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit">DELETE</button>
+            </form>
+        </li>
     @endforeach
 </ul>
 
