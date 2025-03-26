@@ -1,10 +1,6 @@
-<h1>Mes Todos {{$user->name}}</h1>
-
-
+<x-layout.test>
+    <h1>Mes Todos {{$user->name}}</h1>
 <div>Nombres de todos : {{$todoCount}}</div>
-
-
-
 <ul>
     @foreach($todos as $todo)
         <li>
@@ -31,3 +27,4 @@
     <input type="text" name="name" placeholder="Nom">
     <button type="submit">Ajouter</button>
 </form>
+</x-layout-test>
