@@ -13,6 +13,7 @@
                 @csrf
                 <button type="submit">DELETE</button>
             </form>
+            <a href="{{route('todo.view', $todo->id)}}">Voir</a>
         </li>
     @endforeach
 </ul>

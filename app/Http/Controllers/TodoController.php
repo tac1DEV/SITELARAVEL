@@ -28,4 +28,27 @@ class TodoController extends Controller
         $todo->delete();
         return redirect()->back();
     }
+
+    public function view(Todo $todo){
+        return view('todo.view',[
+            'todo' => $todo
+        ]);
+    }
+
+    public function updateform(Todo $todo){
+        return view('todo.form',[
+           'todo' => $todo
+        ]);
+    }
+
+    public function update(Todo $todo, Request $request){
+        $validated = $request->validate([
+            'name' => 'required|min:3'
+        ]);
+        $todo->name = $validated['name'];
+        $todo->save();
+
+       // $todo->update($validated);
+        return redirect()->back();
+    }
 }
