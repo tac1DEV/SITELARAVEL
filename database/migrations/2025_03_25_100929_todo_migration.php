@@ -12,9 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('todos', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->string('title');
-            $table->text('description');
+            $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }

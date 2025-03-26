@@ -2,13 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    dd('oui');
-    return view('welcome');
-});
 
-
-Route::get('/todos', [\App\Http\Controllers\TodoController::class, "index"])->name('todos.index');
-Route::post('/todos', [\App\Http\Controllers\TodoController::class, "save"])->name('todos.save');
-
-
+Route::get('/todo', [\App\Http\Controllers\TodoController::class, 'index'])->name('todo.index');
+Route::post('/todo', [\App\Http\Controllers\TodoController::class, 'add'])->name('todo.add');
