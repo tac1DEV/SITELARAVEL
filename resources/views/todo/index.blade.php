@@ -1,13 +1,14 @@
-<h1>Mes Todos</h1>
+<h1>Mes Todos {{$user->name}}</h1>
 
 
 <div>Nombres de todos : {{$todoCount}}</div>
 
 
+
 <ul>
     @foreach($todos as $todo)
         <li>
-            {{$todo->id}} - {{$todo->name}}
+            {{$todo->id}} - {{$todo->name}} - {{$todo->createdBy->name}}
             <form action="{{route('todo.delete', $todo->id)}}" method="POST">
                 @method('DELETE')
                 @csrf

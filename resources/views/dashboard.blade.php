@@ -11,6 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
                 </div>
+                <img src="{{\Illuminate\Support\Facades\Vite::asset('resources/img/yoan.png')}}">
             </div>
         </div>
     </div>
