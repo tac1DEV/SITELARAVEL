@@ -35,20 +35,24 @@
                     @csrf
 
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                            {{ __('Email') }}
+                        <label for="login" class="block text-sm font-medium text-gray-700 mb-2">
+                            {{ __('Email ou Nom d\'utilisateur') }}
                         </label>
                         <input 
-                            id="email" 
-                            name="email" 
-                            type="email" 
+                            id="login" 
+                            name="login" 
+                            type="text" 
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-200"
                             style="focus:ring-color: #00aff0;"
-                            value="{{ old('email') }}" 
+                            value="{{ old('login') }}" 
                             required 
                             autofocus 
                             autocomplete="username"
+                            placeholder="{{ __('votre@email.com ou votre_username') }}"
                         />
+                        @error('login')
+                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                         @error('email')
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                         @enderror

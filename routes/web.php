@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return view('homepage');
+    })->name('homepage');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,4 +31,4 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -25,10 +25,10 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                             </svg>
                         </div>
-                        <div>
+                        <a href="/profile">
                             <h3 class="text-lg font-semibold text-gray-900">Mon Profil</h3>
                             <p class="text-gray-600">Gérer mes informations</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
